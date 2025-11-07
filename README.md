@@ -4,7 +4,7 @@
 
 ---
 
-### `[ OVERVIEW ]`
+### `[ Overview ]`
 - Share folders or single files through a minimal `python main.py` interface (run from `src/`).  
 - Dual server cores: threaded (default) for broad compatibility, async for high concurrency.  
 - Chunked transfers, optional compression, wildcard search, and Docker deployment baked in.  
@@ -12,7 +12,7 @@
 
 ---
 
-### `[ PROJECT LAYOUT ]`
+### `[ Project Layout ]`
 ```text
 file-exchanger/
 ├── README.md
@@ -40,7 +40,7 @@ All runtime commands below assume you have `cd src` and are running `python` (or
 
 #
 
-### `[ QUICKSTART ]`
+### `[ Quickstart ]`
 1. Clone the repo and create a virtual environment in the repository root.  
 2. Activate the environment.  
 3. `cd src` so you are inside the runtime folder.  
@@ -59,7 +59,7 @@ python main.py serve               # or: python3 main.py serve
 
 ---
 
-### `[ SERVER MODES ]`
+### `[ Server Modes ]`
 - `python main.py serve` boots the threaded server and listens on `5050`.  
 - `python main.py serve --threaded` enforces the threaded worker pool explicitly.  
 - `python main.py serve --async` switches to the asyncio reactor for higher concurrency.  
@@ -75,7 +75,7 @@ python main.py serve --async
 
 ---
 
-### `[ CLIENT COMMANDS ]`
+### `[ Client Commands ]`
 Run commands from inside `src/` with the virtual environment active.
 
 | command | action |
@@ -95,7 +95,7 @@ python main.py search "*mp4"
 
 ---
 
-### `[ DOCKER RUN ]`
+### `[ Docker Run ]`
 - Build the container image once, then run it by mapping host port `5050`.  
 - Keep the port consistent with clients and stop the container when done.  
 
@@ -110,7 +110,7 @@ docker stop <container_id>
 
 ---
 
-### `[ TESTING ]`
+### `[ Testing ]`
 - Execute the bundled unit tests from the repository root.  
 
 ```bash
