@@ -5,14 +5,24 @@ import typer
 from rich.logging import RichHandler
 from rich.progress import BarColumn, Progress, TextColumn
 
-from client import FileClient
-from server import FileServer
-from shared import (
-    ErrorDuringDownload,
-    ErrorDuringUpload,
-    FileNotFound,
-    PeerDisconnected,
-)
+try:
+    from .client import FileClient
+    from .server import FileServer
+    from .shared import (
+        ErrorDuringDownload,
+        ErrorDuringUpload,
+        FileNotFound,
+        PeerDisconnected,
+    )
+except ImportError:  # pragma: no cover - allows running as `python main.py`
+    from client import FileClient  # type: ignore
+    from server import FileServer  # type: ignore
+    from shared import (  # type: ignore
+        ErrorDuringDownload,
+        ErrorDuringUpload,
+        FileNotFound,
+        PeerDisconnected,
+    )
 
 logging.basicConfig(
     level=logging.INFO, format="%(message)s", handlers=[RichHandler(show_path=False)]

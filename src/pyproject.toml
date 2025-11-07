@@ -1,27 +1,36 @@
 [project]
-name = "file_exchanger"
+name = "File Exchanger"
 version = "1.0.0"
 description = "CLI tool for exchanging files between peers over sockets."
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT" }
+authors = [{ name = "alxx", email = "contact@alxx.dev" }]
 
 dependencies = [
-    "rich",
-    "typer"
+  "rich",
+  "typer"
 ]
 
 [project.optional-dependencies]
 dev = [
-    "ruff",
-    "black",
+  "ruff",
+  "black"
 ]
 
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+exclude = ["build", "dist", ".venv"]
+
 [tool.ruff.lint]
 select = ["E", "F", "I", "S"]
 ignore = ["E203"]
-exclude = ["build", "dist", ".venv"]

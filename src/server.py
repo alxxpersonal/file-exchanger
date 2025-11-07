@@ -4,9 +4,20 @@ import os
 import re
 import socket
 import threading
+from pathlib import Path
 from typing import Tuple
 
-from shared import ErrorDuringUpload, FileNotFound, PeerDisconnected
+try:
+    from .shared import ErrorDuringUpload, FileNotFound, PeerDisconnected
+except ImportError:  # pragma: no cover - script/CLI execution
+    from shared import (  # type: ignore
+        ErrorDuringUpload,
+        FileNotFound,
+        PeerDisconnected,
+    )
+
+BASE_DIR = Path(__file__).resolve().parent
+DEFAULT_STORAGE_DIR = str(BASE_DIR / "database")
 
 
 class FileServer:
@@ -14,7 +25,7 @@ class FileServer:
         self,
         host: str = "0.0.0.0",
         port: int = 5050,
-        storage_dir: str = "server_database",
+        storage_dir: str = DEFAULT_STORAGE_DIR,
         mode: str = "threaded",
     ) -> None:
         self.host: str = host

@@ -1,2 +1,104 @@
-.venv
-.idea
+# [ PYTHON / BUILD ARTIFACTS ]
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+pip-wheel-metadata/
+__pypackages__/
+cython_debug/
+
+# [ ENVIRONMENTS / SECRETS ]
+.venv/
+**/.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.env
+.env.*
+*.env
+*.secret
+
+# [ DATASETS / CHECKPOINTS ]
+data/
+datasets/
+checkpoints/
+experiments/
+outputs/
+*.db
+*.sqlite*
+*.h5
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.npz
+*.npy
+
+# [ LOGS / TEMP FILES ]
+logs/
+*/logs/
+*.log
+wandb/
+**/mlruns/
+tensorboard/
+tmp/
+temp/
+
+# [ NOTEBOOK CACHE ]
+.ipynb_checkpoints
+**/.ipynb_checkpoints/
+
+# [ SYSTEM / OS ARTIFACTS ]
+**/.DS_Store
+**/.AppleDouble
+**/.LSOverride
+._*
+Thumbs.db
+Desktop.ini
+Icon?
+
+# [ IDE / EDITOR STATE ]
+.idea/
+.vscode/
+.spyderproject
+.spyproject
+.ropeproject
+
+# [ TESTING / TOOLING CACHES ]
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.cache/
+.mypy_cache/
+.dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# [ FRONTEND / NODE OUTPUT ]
+node_modules/
+**/node_modules/
+.next/
+**/.next/
+out/
+dist/
+
+# [ CONTAINERS / RUNTIME CONFIGS ]
+.docker/
+Dockerfile.local
+*.pid
+
+# [ LOCAL OVERRIDES ]
+*.local
+*.bak
+*.orig
+
+# [ PROJECT ]

@@ -4,12 +4,20 @@ import socket
 import zipfile
 from typing import Callable, Optional
 
-from shared import (
-    ErrorDuringDownload,
-    ErrorDuringUpload,
-    FileNotFound,
-    PeerDisconnected,
-)
+try:
+    from .shared import (
+        ErrorDuringDownload,
+        ErrorDuringUpload,
+        FileNotFound,
+        PeerDisconnected,
+    )
+except ImportError:  # pragma: no cover - script/CLI execution
+    from shared import (  # type: ignore
+        ErrorDuringDownload,
+        ErrorDuringUpload,
+        FileNotFound,
+        PeerDisconnected,
+    )
 
 
 class FileClient:
